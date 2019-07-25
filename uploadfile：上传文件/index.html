@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="file" id="file"  multiple>
+	<button>提交</button>
+	<script>
+		// ---------------------- uploadfile 上传文件 ----------------------
+		// 使用 multipart/form-data 数据格式
+
+		document.querySelector('button').onclick = () => {
+			var data = new FormData();
+			data.append('file', document.querySelector('#file').files);
+			data.append('name', encodeURIComponent('章三'));
+			data.append('age', 11111111);
+
+			fetch('/request', {
+				method: 'POST',
+				body: data,
+				credentials: 'include',
+				headers: {
+					'content-type': 'multipart/form-data'
+				}
+			});
+		};
+
+
+	</script>
+</body>
+</html>

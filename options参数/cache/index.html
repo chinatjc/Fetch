@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<button onclick="fn1()">fn1</button>
+	<button onclick="fn2()">fn2</button>
+	<script>
+
+		// 设置host
+		// 127.0.0.1 leads.autohome.com.cn
+		// 127.0.0.1 www.autohome.com.cn
+
+
+
+		// 访问页面URL
+		// http://www.autohome.com.cn:7777/
+	</script>
+	<script>
+		// ---------------------- cache 如何处理缓存 ----------------------
+
+
+
+		// ----------- default(默认值) 浏览器从HTTP缓存中寻找匹配的请求 -----------
+		// 如果缓存有效，则从缓存中返回资源
+		// 如果缓存已经过期，向服务器发送请求
+		//     · 如果服务器中的资源未改动，则返回304，从缓存中返回资源，并且修改缓存的相关信息
+		//     · 如果服务器中的资源已经改动，则返回200，从响应中返回资源
+		// 如果没有对应的缓存，则以普通的方式请求资源
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	cache: 'default'
+		// });
+
+
+
+		// ----------- no-cache 如果有缓存，直接忽略强缓存，发送协商缓存的请求 -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	cache: 'no-cache'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- no-store 忽略http缓存，以普通方式请求资源(没有'强缓存'和'协商缓存')；拿到响应后也不更新资源 -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	cache: 'no-store'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- reload 忽略http缓存，以普通方式请求资源(没有'强缓存'和'协商缓存')；拿到响应后更新资源 -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	cache: 'reload'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- force-cache 不顾一切的依赖缓存，即使缓存过期了；除非没有任何缓存可以依赖，就会发送一个普通方式请求资源 -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	cache: 'force-cache'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- only-if-cached 不顾一切的依赖缓存，即使缓存过期了；没有任何缓存可以依赖，就会抛出网络错误 -----------
+		// 该参数只能配合 mode 'same-origin' 使用
+
+		// fetch('/request', {
+		// 	mode: 'cors',
+		// 	credentials: 'include',
+		// 	cache: 'only-if-cached'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+	</script>
+</body>
+</html>

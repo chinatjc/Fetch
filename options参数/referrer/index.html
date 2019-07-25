@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<button onclick="fn1()">fn1</button>
+	<button onclick="fn2()">fn2</button>
+	<script>
+
+		// 设置host
+		// 127.0.0.1 leads.autohome.com.cn
+		// 127.0.0.1 www.autohome.com.cn
+
+
+
+		// 访问页面URL
+		// http://www.autohome.com.cn:7777/
+	</script>
+	<script>
+		// ---------------------- referrer ----------------------
+
+
+
+		// ----------- client(默认值) 客户端的UA -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrer: 'client'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- no-referrer (目前实验结果为不支持，Firefox、Opera，20190725) -----------
+
+		fetch('/request', {
+			credentials: 'include',
+			referrer: 'no-referrer'
+			// referrerPolicy: 'no-referrer'
+		})
+		.then(response => {
+			console.log(response);
+			return response.text();
+		})
+		.then(text => {
+			console.log(text);
+		});
+
+	</script>
+</body>
+</html>

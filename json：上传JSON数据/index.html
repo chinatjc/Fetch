@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// ---------------------- 上传 JSON 数据 ----------------------
+
+
+
+		fetch('/request', {
+			method: 'POST',
+			body: JSON.stringify({name: '1111111', age: '222222'}),
+			credentials: 'include',
+			headers: {
+				'content-type': 'application/json'
+			}
+		});
+		// 服务器接收到json数据：{ name: '1111111', age: '222222' }
+
+	</script>
+</body>
+</html>

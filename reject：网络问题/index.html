@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// ---------------------- fetch请求在遇到网络问题时，触发reject ----------------------
+
+		var data = new FormData();
+		data.append('name', encodeURIComponent('章三'));
+		data.append('age', 11111111);
+
+		fetch('/request', {
+			method: 'POST',
+			body: data,
+			credentials: 'include',
+			headers: {
+				'content-type': 'multipart/form-data'
+			}
+		})
+		.then(response => {
+		})
+		.catch(error => {
+			console.log(error.message); // Failed to fetch
+		});
+
+	</script>
+</body>
+</html>

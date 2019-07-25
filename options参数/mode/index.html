@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		// 设置host
+		// 127.0.0.1 leads.autohome.com.cn
+		// 127.0.0.1 www.autohome.com.cn
+
+
+
+		// 访问页面URL
+		// http://www.autohome.com.cn:7777/
+	</script>
+	<script>
+		// ---------------------- mode 请求模式 ----------------------
+
+
+
+		// ----------- same-origin 必须同域条件下发送请求 -----------
+
+		// fetch('http://leads.autohome.com.cn:7777/request', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({name: '1111111', age: '222222'}),
+		// 	mode: 'same-origin',
+		// 	credentials: 'include',
+		// 	headers: {
+		// 		'content-type': 'application/json'
+		// 	}
+		// });
+
+		// 报错：NetworkError when attempting to fetch resource.
+
+
+
+		// ----------- no-cors 只支持请求方法为HEAD、GET、POST的跨域访问，但是无法解析响应返回的数据 -----------
+
+		// fetch('http://leads.autohome.com.cn:7777/request', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({name: '1111111', age: '222222'}),
+		// 	mode: 'no-cors',
+		// 	credentials: 'include',
+		// 	headers: {
+		// 		'content-type': 'application/json'
+		// 	}
+		// })
+		// .then(response => {
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// });
+		// type: "opaque"，无法解析响应返回的数据
+		// {body: null, bodyUsed: false, headers: Headers, ok: false, redirected: false, status: 0, statusText: "", type: "opaque", url: ""}
+
+
+
+		// ----------- cors(默认值) 允许跨域访问 -----------
+
+		// fetch('http://leads.autohome.com.cn:7777/request', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({name: '1111111', age: '222222'}),
+		// 	mode: 'cors',
+		// 	credentials: 'include',
+		// 	headers: {
+		// 		'content-type': 'application/json'
+		// 	}
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		// 基本的fetch请求
+		// fetch(url[, options])
+
+		fetch('https://dealer.m.autohome.com.cn/handler/other/getdata?__action=dealerlq.getSpecAllPrice&cityId=110100&specId=40787')
+		.then(response => {
+			return response.json();
+		})
+		.then(test => {
+			console.log(test);
+		});
+
+	</script>
+</body>
+</html>
