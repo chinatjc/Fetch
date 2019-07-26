@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<button onclick="fn1()">fn1</button>
+	<button onclick="fn2()">fn2</button>
+	<script>
+
+		// 设置host
+		// 127.0.0.1 leads.autohome.com.cn
+		// 127.0.0.1 www.autohome.com.cn
+
+
+
+		// 访问页面URL
+		// http://www.autohome.com.cn:7777/
+	</script>
+	<script>
+		// ---------------------- referrerPolicy ----------------------
+
+
+
+		// ----------- no-referrer-when-downgrade(默认值) referrer始终发送，除非是从HTTPS向HTTP发送请求-----------
+
+		// fetch('http://www.autohome.com.cn/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'no-referrer-when-downgrade'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- no-referrer 永远不发送referrer -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'no-referrer'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- origin 只发送域名信息，而不是整个URL -----------
+		// 例如：http://127.0.0.1:7777，而不是http://127.0.0.1:7777/request
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'origin'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- origin-when-cross-origin 当跨域请求时，只发送origin；其他情referrer正常 -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'origin-when-cross-origin'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- same-origin 只有同源时才有referrer -----------
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'same-origin'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+
+
+		// ----------- unsafe-url 无论任何情况下，都会发送完整的referrer -----------
+		// 不太安全，不建议使用
+
+		// fetch('/request', {
+		// 	credentials: 'include',
+		// 	referrerPolicy: 'unsafe-url'
+		// })
+		// .then(response => {
+		// 	console.log(response);
+		// 	return response.text();
+		// })
+		// .then(text => {
+		// 	console.log(text);
+		// });
+
+	</script>
+</body>
+</html>

@@ -16,7 +16,8 @@ http.createServer((request, response) => {
 	} else if (request.url === '/request') {
 
 		console.log('-----------------------------------');
-		console.log(request.headers['user-agent']);
+		// console.log(request.headers.referrer);
+		console.log(request.headers.referer);
 
 		responseBody = String(new Date());
 	} else if (request.url === '/home') {
